@@ -1,0 +1,25 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background: linear-gradient(#b2dde2, #c9c9c9); */
+    background: linear-gradient(to bottom,#b2dde2, #ffffff);
+}
+.plus-minus{
+    height: 30px;
+    width: 30px;
+    padding: initial;
+    color: white;
+    border-radius: 50%;
+    background-color: rgb(7, 7, 97);
+}
+.plus-minus:hover,.plus-minus:focus{
+    background-color: rgb(101, 101, 151);
+    color: white;
+}
+.submit{
+    color: black;
+    background-color: rgb(110, 100, 100);
+}

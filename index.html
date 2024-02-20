@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Assest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assest/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container-md container-fluid mt-md-5 ">
+        <form action="" class="form row" id="form">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Student Form</h1>
+                </div>
+                <div class="col-lg-4">
+                    <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" required placeholder="your name">
+                </div>
+                <div class="col-lg-4">
+                    <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" required placeholder="surname">
+                </div>
+                <div class="col-lg-4">
+                    <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
+                    <input type="text" class="form-control" id="dob" required placeholder="21-03-2003">
+                </div>
+                <div class="col-lg-4">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" required placeholder="example@gmail.com">
+                </div>
+                <div class="col-lg-4">
+                    <label for="exampleFormControlInput1" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" required placeholder="Ahemdabad">
+                </div>
+                <div class="col-lg-4">
+                    <label for="exampleFormControlInput1" class="form-label">Graduation Year</label>
+                    <input type="text" class="form-control" id="graduation-year" placeholder="YYYY" required>
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-md-5">
+                <div class="col-11">
+                    <h1>Education:</h1>
+                </div>
+                <div class="col-1">
+                    <button class="btn plus-minus" onclick="addSection()" type="button"><i
+                            class="fa-solid fa-plus"></i></button>
+                </div>
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table education-container" id="table">
+                            <thead>
+                                <th>Degree/Board</th>
+                                <th>School/collge</th>
+                                <th>Start Date</th>
+                                <th>Passout Year</th>
+                                <th>Percentage</th>
+                                <th>Backlog</th>
+                                <th></th>
+                            </thead>
+                            <tbody id="sections">
+                                <tr class="education">
+                                    <td><input typ="text" class="form-control degree" required></td>
+                                    <td><input type="text" class="form-control school" required></td>
+                                    <td><input type="month" class="form-control startDate" required
+                                            placeholder="month Year"></td>
+                                    <td><input type="month" class="form-control endDate" required
+                                            placeholder="month Year"></td>
+                                    <td><input type="number" class="form-control percentage" required
+                                            placeholder="99.99"></td>
+                                    <td><input type="number" class="form-control backlog" required placeholder="0"></td>
+                                </tr>
+                                <tr class="education">
+                                    <td><input typ="text" class="form-control degree" required></td>
+                                    <td><input type="text" class="form-control school" required></td>
+                                    <td><input type="month" class="form-control startDate" required
+                                            placeholder="month Year"></td>
+                                    <td><input type="month" class="form-control endDate" required
+                                            placeholder="month Year"></td>
+                                    <td><input type="number" class="form-control percentage" required
+                                            placeholder="99.99"></td>
+                                    <td><input type="number" class="form-control backlog"  placeholder="0"></td>
+                                </tr>
+                                <tr class="education" id="newrow" style="display: none;">
+                                    <td><input typ="text" class="form-control degree" required></td>
+                                    <td><input type="text" class="form-control school" required></td>
+                                    <td><input type="month" class="form-control startDate" required
+                                            placeholder="month Year"></td>
+                                    <td><input type="month" class="form-control endDate" required
+                                            placeholder="month Year"></td>
+                                    <td><input type="number" class="form-control percentage" required
+                                            placeholder="99.99"></td>
+                                    <td><input type="number" class="form-control backlog"  placeholder="0"></td>
+                                    <td>
+                                        <button class="btn plus-minus" onclick="minus(this.id)" type="button"><i
+                                                class="fa-solid fa-minus"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 mt-5 d-flex justify-content-center">
+                <button class="btn submit" type="submit" onclick="showInfo()" onsubmit="">submit</button>
+            </div>
+        </form>
+        <div class="row mt-5">
+            <div class="col-12 d-flex flex-column" id="person-details">
+                <p class="fs-4 fw-bold text-dark" id="fullname"> </p>
+                <p class="fs-6 fw-bold text-dark" id="doba"></p>
+                <p class="fs-6 fw-bold text-dark" id="add"></p>
+                <p class="fs-6 fw-bold text-dark" id="passout"></p>
+            </div>
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead id="heading">
+                            <th>Degree/Board</th>
+                            <th>School/collge</th>
+                            <th>Start Date</th>
+                            <th>Passout Year</th>
+                            <th>Percentage</th>
+                            <th>Backlog</th>
+                            <th></th>
+                        </thead>
+                        <tbody id="show-content">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Assest/js/bootstrap.min.js"></script>
+    <script src="Assest/js/index.js"></script>
+</body>
+
+</html>
